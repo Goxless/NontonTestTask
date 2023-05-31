@@ -20,11 +20,11 @@ public class Main {
         errorsOutputTest();
     }
 
-    static void addMultipleProducts(ProductEntity... entities){
+    private static void addMultipleProducts(ProductEntity... entities){
         Arrays.stream(entities).forEach(productDao::addProduct);
     }
 
-    static void errorsOutputTest(){
+    private static void errorsOutputTest(){
 
         ProductEntity fedyaProd = new ProductEntity("Fedya");
 

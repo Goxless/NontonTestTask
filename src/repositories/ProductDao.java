@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ProductDao {
 
-    private HashMap<String, ProductEntity> productRepo ; // DB mock via map
+    private final HashMap<String, ProductEntity> productRepo ; // DB mock via map
 
     /** constructor overload
      * @param productRepo - external dictionary
