@@ -9,7 +9,7 @@ git clone https://github.com/Goxless/NontonTestTask
 
 * запустить собранный артефакт
 ```bash
-java -jar NontonTestTask.jar
+java -jar artifacts/NontonTestTask.jar
 ```
 ---
 ## Description
@@ -18,10 +18,12 @@ java -jar NontonTestTask.jar
 Соответственно: 
 
 класс сущности:
-> ProductEntity ***вместо Product***
+> ProductEntity ***вместо Product***  
+(_для идентификатора используется UUID_)
 
 класс DAO:
 > ProductDAO ***вместо ProductsImpl***
+> 
 
 
 

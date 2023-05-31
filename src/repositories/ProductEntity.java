@@ -1,19 +1,21 @@
 package repositories;
 
+import static java.util.UUID.randomUUID;
+
 public class ProductEntity {
 
-    private static int largestProductID = 0;
     private String id;
     private String name;
 
     public ProductEntity(String name) {
-        this.id = Integer.toString(largestProductID++);
+        this.id = randomUUID().toString();
         this.name = name;
     }
 
     public String getId() {
         return id;
     }
+
     public void setId(String id) {
         this.id = id;
     }

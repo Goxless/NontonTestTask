@@ -6,7 +6,17 @@ import java.util.List;
 
 public class ProductDao {
 
-    HashMap<String, ProductEntity> productRepo = new HashMap<>(); // DB mock via map
+    private HashMap<String, ProductEntity> productRepo ; // DB mock via map
+
+    /** constructor overload
+     * @param productRepo - external dictionary
+     */
+    public ProductDao(HashMap<String, ProductEntity> productRepo) {
+        this.productRepo = productRepo;
+    }
+    public ProductDao() {
+        this.productRepo = new HashMap<>();
+    }
 
     public boolean addProduct(ProductEntity product) {
 
@@ -25,6 +35,15 @@ public class ProductDao {
         }
 
         productRepo.remove(product.getId());
+        return true;
+    }
+    public boolean deleteProductByID(String id) {
+
+        if(!productRepo.containsKey(id)){
+            return false;
+        }
+
+        productRepo.remove(id);
         return true;
     }
 
