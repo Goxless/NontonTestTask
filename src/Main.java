@@ -8,7 +8,7 @@ public class Main {
     private static final ProductDao productDao = new ProductDao();
     public static void main(String[] args) {
 
-        addMultipleProducts(new ProductEntity("Kolya"),
+        productDao.addMultipleProducts(new ProductEntity("Kolya"),
                 new ProductEntity("Dima"),
                 new ProductEntity("Petya"),
                 new ProductEntity("Kolya"));
@@ -18,10 +18,6 @@ public class Main {
         System.out.println();
 
         errorsOutputTest();
-    }
-
-    private static void addMultipleProducts(ProductEntity... entities){
-        Arrays.stream(entities).forEach(productDao::addProduct);
     }
 
     private static void errorsOutputTest(){

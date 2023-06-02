@@ -1,6 +1,7 @@
 package repositories;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,6 +27,16 @@ public class ProductDao {
 
         productRepo.put(product.getId(), product);
         return true;
+    }
+
+    public boolean addMultipleProducts(ProductEntity... entities){
+        try{
+            Arrays.stream(entities).forEach(this::addProduct);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
     public boolean deleteProduct(ProductEntity product) {
@@ -70,7 +81,4 @@ public class ProductDao {
     public HashMap<String, ProductEntity> getAllProduct() {
         return this.productRepo;
     }
-
-
-
 }
